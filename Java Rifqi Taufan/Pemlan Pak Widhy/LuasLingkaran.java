@@ -1,7 +1,7 @@
-public class LuasLingkaran {
+public class luasLingkaran {
     private double jariJari;
     
-    public LuasLingkaran(double jariJari) {
+    public luasLingkaran(double jariJari) {
         this.jariJari = jariJari;
     }
     
