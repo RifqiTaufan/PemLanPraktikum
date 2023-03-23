@@ -87,7 +87,7 @@ public class bukuMain {
 
             }
         }
-        while (pilihan != 8);
+        while (pilihan >= 1 && pilihan <= 7);
         System.out.println("TIDAK ADA PILIHAN");
     }
         
