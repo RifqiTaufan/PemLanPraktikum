@@ -44,8 +44,10 @@ public class heroMain {
 
         if (hero1.getHP() < hero2.getHP()) {
             System.out.println(hero1.getName() + " kalah.");
+            System.out.println("Pemenangnya adalah = " + hero2.getName());
         } else if (hero2.getHP() < hero1.getHP()) {
             System.out.println(hero2.getName() + " kalah.");
+            System.out.println("Pemenangnya adalah = " + hero1.getName());
         } else {
             System.out.println("Battle Seri!");
         }
