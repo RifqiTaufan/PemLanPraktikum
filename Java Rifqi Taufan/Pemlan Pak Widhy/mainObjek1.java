@@ -92,7 +92,8 @@ public class mainObjek1 {
         double jari5 = input.nextDouble();
         Lingkaran telapakKakiKanan = new Lingkaran(jari5);
 
-        double totalLuas = kepala.hitungLuas() + badan.hitungLuas() + tanganKiri.hitungLuas() + tanganKanan.hitungLuas() + telapakTanganKiri.hitungLuas() + telapakTanganKanan.hitungLuas() + kakiKiri.hitungLuas() + kakiKanan.hitungLuas() + telapakKakiKiri.hitungLuas() + telapakKakiKanan.hitungLuas();
+        double totalLuas = kepala.hitungLuas() + badan.hitungLuas() + tanganKiri.hitungLuas() + tanganKanan.hitungLuas() + telapakTanganKiri.hitungLuas() 
+        + telapakTanganKanan.hitungLuas() + kakiKiri.hitungLuas() + kakiKanan.hitungLuas() + telapakKakiKiri.hitungLuas() + telapakKakiKanan.hitungLuas();
 
         double tinggiBadan = kepala.getJariJari() + kepala.getJariJari() + badan.getLebar() + kakiKanan.getPanjang() + telapakKakiKanan.getJariJari() + telapakKakiKanan.getJariJari();
         
