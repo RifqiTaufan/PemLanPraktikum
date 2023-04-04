@@ -255,7 +255,7 @@ public class Relationship {
         driverBus2.nyetirBus(bus2);
         System.out.println();
 
-        angkot1.naikPenumpang(penumpang15);
+        angkot1.turunPenumpang(penumpang15);
         angkot1.naikPenumpang(penumpang10);
         angkot1.naikPenumpang(penumpang20);
         angkot1.naikPenumpang(penumpang7);
@@ -274,6 +274,7 @@ public class Relationship {
         bus1.naikPenumpang(penumpang9);
         bus1.naikPenumpang(penumpang14);
         bus1.naikPenumpang(penumpang18);
+        bus1.naikPenumpang(penumpang15);
         System.out.println();
 
         bus2.naikPenumpang(penumpang4);
