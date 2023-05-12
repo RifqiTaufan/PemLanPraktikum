@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 class Mobil {
     protected String nomorPolisi;
     protected String tipe;
@@ -212,6 +213,21 @@ class Penumpang extends Orang {
 
 public class Relationship {
     public static void main(String[] args) {
+        LinkedList<Angkot> daftarAngkot = new LinkedList<Angkot>();
+        daftarAngkot.add(new Angkot("N 456 WAB", "Isuzu", 15));
+        daftarAngkot.add(new Angkot("R 1465 GJ", "Daihatsu", 20));
+        daftarAngkot.add(new Angkot("N 295 BAW", "Esemka", 20));
+        System.out.println(daftarAngkot);
+        System.out.println();
+
+        LinkedList<Bus> daftarBus = new LinkedList<Bus>();
+        daftarBus.add(new Bus("B 9621 JKH", "Volvo", 40));
+        daftarBus.add(new Bus("B 2097 BAN", "Juragan", 50));
+        daftarBus.add(new Bus("N 9845 GAD", "Wuling", 45));
+        System.out.println(daftarBus);
+        System.out.println();
+
+        
         Angkot angkot1 = new Angkot("N 1234 AB", "Suzuki", 10);
         Angkot angkot2 = new Angkot("B 121 FQI", "Toyota", 10);
         Bus bus1 = new Bus("N 4567 BG", "Mercedes Benz", 20);
