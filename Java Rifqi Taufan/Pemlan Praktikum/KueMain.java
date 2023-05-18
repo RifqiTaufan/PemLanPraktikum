@@ -1,36 +1,37 @@
 public class KueMain {
     public static void main(String[] args) {
-        Kue[] daftarKue = new Kue[20];
-
-        daftarKue[0]  = new KueJadi("Apem", 10000, 10);      
-        daftarKue[1]  = new KueJadi("Lumpur", 8000, 9);
-        daftarKue[2]  = new KueJadi("Bika Ambon", 20000, 15);      
-        daftarKue[3]  = new KueJadi("Croffle", 15000, 5);       
-        daftarKue[4]  = new KueJadi("Cubit", 8000, 10);         
-        daftarKue[5]  = new KueJadi("Carabikang", 7000, 5);       
-        daftarKue[6]  = new KueJadi("Croissant", 20000, 7);                   
-        daftarKue[7]  = new KueJadi("Cheese tart", 9000, 20);                   
-        daftarKue[8]  = new KueJadi("Cookies", 15000, 6);                  
-        daftarKue[9]  = new KueJadi("Kue Lapis", 10000, 3);                
-        daftarKue[10] = new KuePesanan("Kue Coklat", 50000, 1.4);               
-        daftarKue[11] = new KuePesanan("Cheese Cake", 150000, 1.2);                 
-        daftarKue[12] = new KuePesanan("Brownies", 60000, 0.6);            
-        daftarKue[13] = new KuePesanan("Sponge Cake", 70000, 1.3);                
-        daftarKue[14] = new KuePesanan("Butter Cake", 40000, 1);                
-        daftarKue[15] = new KuePesanan("Chiffon Cake", 45000, 1.5);                
-        daftarKue[16] = new KuePesanan("Kue Tape", 100000, 2.1);                 
-        daftarKue[17] = new KuePesanan("Pound Cake", 80000, 1.7);               
-        daftarKue[18] = new KuePesanan("Biscuit", 35000, 0.3);               
-        daftarKue[19] = new KuePesanan("Souffle Pancake", 12500, 0.8);
+        Kue[] daftarKue = { new KueJadi("Apem", 10000, 10), 
+                            new KueJadi("Lumpur", 8000, 9),
+                            new KueJadi("Bika Ambon", 20000, 15),    
+                            new KueJadi("Croffle", 15000, 5),
+                            new KueJadi("Cubit", 8000, 10),         
+                            new KueJadi("Carabikang", 7000, 5),       
+                            new KueJadi("Croissant", 20000, 7),                   
+                            new KueJadi("Cheese tart", 9000, 20),                  
+                            new KueJadi("Cookies", 15000, 6),             
+                            new KueJadi("Kue Lapis", 10000, 3),                
+                            new KuePesanan("Kue Coklat", 50000, 1.4),               
+                            new KuePesanan("Cheese Cake", 150000, 1.2),                 
+                            new KuePesanan("Brownies", 60000, 0.6),            
+                            new KuePesanan("Sponge Cake", 70000, 1.3), 
+                            new KuePesanan("Butter Cake", 40000, 1), 
+                            new KuePesanan("Chiffon Cake", 45000, 1.5), 
+                            new KuePesanan("Kue Tape", 100000, 2.1), 
+                            new KuePesanan("Pound Cake", 80000, 1.7), 
+                            new KuePesanan("Biscuit", 35000, 0.3), 
+                            new KuePesanan("Souffle Pancake", 12500, 0.8)};
 
         System.out.println("====DAFTAR KUE====");
+        int urutan = 1;
+
         for (Kue kue : daftarKue) {
-            System.out.println(kue.toString());
+            System.out.println(urutan + ". " + kue.toString());
+            urutan++;
             if (kue instanceof KuePesanan) {
-                System.out.printf("%-12s: %s\n", "Jenis Kue", "Kue Pesanan");
+                System.out.printf("\t%-12s: %s\n", "Jenis Kue", "Kue Pesanan");
                 System.out.println();
             } else {
-                System.out.printf("%-12s: %s\n", "Jenis Kue", "Kue Jadi");
+                System.out.printf("\t%-12s: %s\n", "Jenis Kue", "Kue Jadi");
                 System.out.println();
             }
         }
@@ -68,7 +69,7 @@ public class KueMain {
                 jumlahKueJadi += ((KueJadi) kue).getJumlah();
             }
         }
-        System.out.printf("Total harga kue jadi : Rp%,5.2f\n", totalHargaJadi);
+        System.out.printf("Total harga kue jadi  : Rp%,5.2f\n", totalHargaJadi);
         System.out.printf("Total jumlah kue jadi : %d kue\n", jumlahKueJadi);
         System.out.println();
 

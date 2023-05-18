@@ -18,6 +18,6 @@ public abstract class Kue {
     public abstract double hitungHarga();
 
     public String toString() {
-        return String.format("%-12s: %s\n%-12s: Rp%,5.2f\n", "Nama Kue", nama, "Harga Kue", getHarga());
+        return String.format("\t%-12s: %s\n\t%-12s: Rp%,5.2f\n", "Nama Kue", nama, "Harga Kue", getHarga());
     }
 }

@@ -15,6 +15,6 @@ public class KueJadi extends Kue {
     }
     
     public String toString() {
-        return super.toString() + String.format("%-12s: %.0f kue", "Jumlah Kue", jumlah);
+        return super.toString() + String.format("\t%-12s: %.0f kue", "Jumlah Kue", jumlah);
     }
 }
