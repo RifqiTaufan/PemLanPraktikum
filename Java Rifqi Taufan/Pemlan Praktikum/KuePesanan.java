@@ -15,6 +15,6 @@ public class KuePesanan extends Kue {
     }
 
     public String toString() {
-        return super.toString() + System.out.printf("%-12s: %.1f gram\n", "Berat Kue", berat);
+        return super.toString() + String.format("%-12s: %.1f gram", "Berat Kue", berat);
     }
 }
