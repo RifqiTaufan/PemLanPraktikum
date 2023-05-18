@@ -22,16 +22,14 @@ public class KueMain {
                             new KuePesanan("Souffle Pancake", 12500, 0.8)};
 
         System.out.println("====DAFTAR KUE====");
-        int urutan = 1;
 
         for (Kue kue : daftarKue) {
-            System.out.println(urutan + ". " + kue.toString());
-            urutan++;
+            System.out.println(kue.toString());
             if (kue instanceof KuePesanan) {
-                System.out.printf("\t%-12s: %s\n", "Jenis Kue", "Kue Pesanan");
+                System.out.printf("%-12s: %s\n", "Jenis Kue", "Kue Pesanan");
                 System.out.println();
             } else {
-                System.out.printf("\t%-12s: %s\n", "Jenis Kue", "Kue Jadi");
+                System.out.printf("%-12s: %s\n", "Jenis Kue", "Kue Jadi");
                 System.out.println();
             }
         }
@@ -73,7 +71,7 @@ public class KueMain {
         System.out.printf("Total jumlah kue jadi : %d kue\n", jumlahKueJadi);
         System.out.println();
 
-        double hargaTerbesar = Double.MIN_VALUE;
+        double hargaTerbesar = 0;
         Kue kueTermahal = null;
         for (Kue kue : daftarKue) {
             if (kue.getHarga() > hargaTerbesar) {
