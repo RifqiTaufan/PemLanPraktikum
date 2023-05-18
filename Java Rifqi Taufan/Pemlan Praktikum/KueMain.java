@@ -22,7 +22,6 @@ public class KueMain {
                             new KuePesanan("Souffle Pancake", 12500, 0.8)};
 
         System.out.println("====DAFTAR KUE====");
-
         for (Kue kue : daftarKue) {
             System.out.println(kue.toString());
             if (kue instanceof KuePesanan) {
