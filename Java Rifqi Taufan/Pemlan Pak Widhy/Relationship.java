@@ -1,6 +1,7 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+// import java.util.ArrayList;
+// import java.util.LinkedList;
+// import java.util.Queue;
+
 class Mobil {
     protected String nomorPolisi;
     protected String tipe;
@@ -22,6 +23,10 @@ class Mobil {
 
     public int getJumlahPenumpang() {
         return jumlahPenumpang;
+    }
+
+    public String toString() {
+        return String.format("%-17s: %s\n%-17s: %s\n%-17s: %d", "Nomor Polisi", nomorPolisi, "Tipe", tipe, "Jumlah Penumpang", jumlahPenumpang);
     }
 }
 
@@ -60,17 +65,22 @@ class Angkot extends Mobil {
         }
     }
 
-    public void displayAngkot() {
-        System.out.println("Nomor Polisi        : " + this.nomorPolisi);
-        System.out.println("Tipe                : " + this.tipe);
-        System.out.println("Jumlah penumpang    : " + this.jumlahPenumpang);
-        // System.out.println("Daftar penumpang  : ");
-        // for (int i = 0; i < jumlahPenumpang; i++) {
-        //     if (daftarPenumpang[i] != null) {
-        //     System.out.println((i + 1) + ". " + daftarPenumpang[i].getNama());
-        //     }
-        // }
+    @Override
+    public String toString() {
+        return super.toString();
     }
+
+    // public void displayAngkot() {
+    //     System.out.println("Nomor Polisi        : " + this.nomorPolisi);
+    //     System.out.println("Tipe                : " + this.tipe);
+    //     System.out.println("Jumlah penumpang    : " + this.jumlahPenumpang);
+    //     System.out.println("Daftar penumpang  : ");
+    //     for (int i = 0; i < jumlahPenumpang; i++) {
+    //          if (daftarPenumpang[i] != null) {
+    //          System.out.println((i + 1) + ". " + daftarPenumpang[i].getNama());
+    //          }
+    //      }
+    // }
 }
 
 class Bus extends Mobil {
@@ -108,17 +118,21 @@ class Bus extends Mobil {
         }
     }
 
-    public void displayBus() {
-        System.out.println("Nomor Polisi       : " + this.nomorPolisi);
-        System.out.println("Tipe               : " + this.tipe);
-        System.out.println("Jumlah penumpang   : " + this.jumlahPenumpang);
-        // System.out.println("Daftar penumpang : ");
-        // for (int i = 0; i < jumlahPenumpang; i++) {
-        //     if (daftarPassenger[i] != null) {
-        //     System.out.println((i + 1) + ". " + daftarPassenger[i].getNama());
-        //     }
-        // }
+    @Override
+    public String toString() {
+        return super.toString();
     }
+    // public void displayBus() {
+    //     System.out.println("Nomor Polisi       : " + this.nomorPolisi);
+    //     System.out.println("Tipe               : " + this.tipe);
+    //     System.out.println("Jumlah penumpang   : " + this.jumlahPenumpang);
+    //     System.out.println("Daftar penumpang : ");
+    //     for (int i = 0; i < jumlahPenumpang; i++) {
+    //         if (daftarPassenger[i] != null) {
+    //         System.out.println((i + 1) + ". " + daftarPassenger[i].getNama());
+    //         }
+    //     }
+    // }
 }
 
 class Orang {
@@ -195,87 +209,151 @@ class Penumpang extends Orang {
         super(nama);
     }
 
-    public void naikAngkot(Angkot angkot) {
-        System.out.println("Penumpang bernama " + getNama() + " menaiki kendaraan angkot " + angkot.tipe + ".");
-    }
+    // public void naikAngkot(Angkot angkot) {
+    //     System.out.println("Penumpang bernama " + getNama() + " menaiki kendaraan angkot " + angkot.tipe + ".");
+    // }
 
-    public void turunAngkot(Angkot angkot) {
-        System.out.println("Penumpang bernama " + getNama() + " turun dari kendaraan angkot " + angkot.tipe + ".");
-    }
+    // public void turunAngkot(Angkot angkot) {
+    //     System.out.println("Penumpang bernama " + getNama() + " turun dari kendaraan angkot " + angkot.tipe + ".");
+    // }
 
-    public void naikBus(Bus bus) {
-        System.out.println("Penumpang bernama " + getNama() + " menaiki kendaraan bus " + bus.tipe + ".");
-    }
+    // public void naikBus(Bus bus) {
+    //     System.out.println("Penumpang bernama " + getNama() + " menaiki kendaraan bus " + bus.tipe + ".");
+    // }
 
-    public void turunBus(Bus bus) {
-        System.out.println("Penumpang bernama " + getNama() + " turun dari kendaraan bus " + bus.tipe + ".");
-    }
+    // public void turunBus(Bus bus) {
+    //     System.out.println("Penumpang bernama " + getNama() + " turun dari kendaraan bus " + bus.tipe + ".");
+    // }
 }
 
 
 public class Relationship {
     public static void main(String[] args) {
-        ArrayList<Angkot> daftarAngkot = new ArrayList<Angkot>();
-        daftarAngkot.add(new Angkot("N 1234 AB", "Suzuki", 20));
-        daftarAngkot.add(new Angkot("B 121 FQI", "Toyota", 20));
-        daftarAngkot.add(new Angkot("N 1733 DEK", "Isuzu", 15)); 
+        // ARRAY INDEX OUT OF BOUNDS EXCEPTION
+        try {
+            Mobil[] listKendaraan = new Mobil[5];
 
-        ArrayList<DriverAngkot> driver1 = new ArrayList<DriverAngkot>();
-        driver1.add(new DriverAngkot("Pak Supri", true));
-        driver1.add(new DriverAngkot("Pak Gonsu", false));
-        driver1.add(new DriverAngkot("Pak Jarwo", true));
+            listKendaraan[0] = new Angkot("N 1234 AB", "Suzuki", 20);
+            listKendaraan[1] = new Angkot("B 121 FQI", "Toyota", 20);
+            listKendaraan[2] = new Angkot("N 1733 DEK", "Isuzu", 15);
+            listKendaraan[3] = new Bus("N 9845 BJC", "Juragan 99", 40);
+            listKendaraan[4] = new Bus("B 9123 JKL", "27 Trans", 45);
+            listKendaraan[5] = new Bus("N 4820 WER", "Handoyo", 30);
 
-        daftarAngkot.get(0).setDriverAngkot(driver1.get(0));
-        daftarAngkot.get(1).setDriverAngkot(driver1.get(1));
-        daftarAngkot.get(2).setDriverAngkot(driver1.get(2));
+            for (Mobil kendaraan : listKendaraan) {
+                System.out.println(kendaraan.toString());
+                System.out.println();
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
 
-        System.out.println("=======DAFTAR ANGKOT=======");
-        for (Angkot angkot : daftarAngkot) {
-            angkot.displayAngkot();
+        // ARITHMETIC EXCEPTION
+        try {
+            Mobil[] listKendaraan = new Mobil[2];
+
+            listKendaraan[0] = new Angkot("N 1234 AB", "Suzuki", 0);
+            listKendaraan[1] = new Angkot("B 121 FQI", "Toyota", 0);
+            
+            int totalJumlahPenumpang = 0;
+            int jumlahKendaraan = 0;
+
+            for (Mobil kendaraan : listKendaraan) {
+                totalJumlahPenumpang += kendaraan.getJumlahPenumpang();
+            }
+
+            if (jumlahKendaraan == 0) {
+                throw new ArithmeticException("Tidak ada kendaraan.");
+            }
+
+            int rataRataJumlahPenumpang = totalJumlahPenumpang / jumlahKendaraan;
+            System.out.printf("%-27s: %d","Rata-rata Jumlah Penumpang", rataRataJumlahPenumpang);
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        } finally {
             System.out.println();
-        }
+            Angkot angkot = new Angkot("N 1234 AB", "Suzuki", 20);
+            Angkot angkot1 = new Angkot("B 121 FQI", "Toyota", 20);
 
-        ArrayList<Bus> daftarBus = new ArrayList<Bus>();
-        daftarBus.add(new Bus("N 9845 BJC", "Juragan 99", 40));
-        daftarBus.add(new Bus("B 9123 JKL", "27 Trans", 45));
-        daftarBus.add(new Bus("N 4820 WER", "Handoyo", 30)); 
-
-        ArrayList<DriverBus> driver2 = new ArrayList<DriverBus>();
-        driver2.add(new DriverBus("Pak Grijo", true));
-        driver2.add(new DriverBus("Pak Seruni", false));
-        driver2.add(new DriverBus("Pak Bediku", true));
-
-        daftarBus.get(0).setDriverBus(driver2.get(0));
-        daftarBus.get(1).setDriverBus(driver2.get(1));
-        daftarBus.get(2).setDriverBus(driver2.get(2));
-
-        System.out.println("=======DAFTAR BUS=======");
-        for (Bus bus : daftarBus) {
-            bus.displayBus();
+            System.out.println(angkot.toString());
             System.out.println();
+            System.out.println(angkot1.toString());
         }
+        System.out.println();
 
-        Queue<Angkot> antrianAngkot = new LinkedList<>();
-        antrianAngkot.add(daftarAngkot.get(0));
-        antrianAngkot.add(daftarAngkot.get(1));
-        antrianAngkot.add(daftarAngkot.get(2));
+        // GENERAL EXCEPTION (NULL POINTER EXCEPTION)
+        try {
+            Bus bus = new Bus("N 9845 BJC", "Juragan 99", 40);
+            DriverBus driver = null;
 
-        int nomorantrian = 0;
-        System.out.println("Antrian Angkot di Terminal: ");
-        for (Angkot angkot : antrianAngkot) {
-            System.out.println(++nomorantrian + ". " + "Pengemudi bernama " + angkot.getDriverAngkot().getNama() + " dengan angkot " + angkot.getTipe() + " masuk terminal.");
+            driver.nyetirBus(bus);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
+        System.out.println();
+        
+        // ArrayList<Angkot> daftarAngkot = new ArrayList<Angkot>();
+        // daftarAngkot.add(new Angkot("N 1234 AB", "Suzuki", 20));
+        // daftarAngkot.add(new Angkot("B 121 FQI", "Toyota", 20));
+        // daftarAngkot.add(new Angkot("N 1733 DEK", "Isuzu", 15)); 
 
-        Queue<Bus> antrianBus = new LinkedList<>();
-        antrianBus.add(daftarBus.get(0));
-        antrianBus.add(daftarBus.get(1));
-        antrianBus.add(daftarBus.get(2));
+        // ArrayList<DriverAngkot> driver1 = new ArrayList<DriverAngkot>();
+        // driver1.add(new DriverAngkot("Pak Supri", true));
+        // driver1.add(new DriverAngkot("Pak Gonsu", false));
+        // driver1.add(new DriverAngkot("Pak Jarwo", true));
 
-        int antrian = 0;
-        System.out.println("Antrian Bus di Terminal: ");
-        for (Bus bus : antrianBus) {
-            System.out.println(++antrian + ". " + "Pengemudi bernama " + bus.getDriverBus().getNama() + " dengan bus " + bus.getTipe() + " masuk terminal. ");
-        }
+        // daftarAngkot.get(0).setDriverAngkot(driver1.get(0));
+        // daftarAngkot.get(1).setDriverAngkot(driver1.get(1));
+        // daftarAngkot.get(2).setDriverAngkot(driver1.get(2));
+
+        // System.out.println("=======DAFTAR ANGKOT=======");
+        // for (Angkot angkot : daftarAngkot) {
+        //     angkot.displayAngkot();
+        //     System.out.println();
+        // }
+
+        // ArrayList<Bus> daftarBus = new ArrayList<Bus>();
+        // daftarBus.add(new Bus("N 9845 BJC", "Juragan 99", 40));
+        // daftarBus.add(new Bus("B 9123 JKL", "27 Trans", 45));
+        // daftarBus.add(new Bus("N 4820 WER", "Handoyo", 30)); 
+
+        // ArrayList<DriverBus> driver2 = new ArrayList<DriverBus>();
+        // driver2.add(new DriverBus("Pak Grijo", true));
+        // driver2.add(new DriverBus("Pak Seruni", false));
+        // driver2.add(new DriverBus("Pak Bediku", true));
+
+        // daftarBus.get(0).setDriverBus(driver2.get(0));
+        // daftarBus.get(1).setDriverBus(driver2.get(1));
+        // daftarBus.get(2).setDriverBus(driver2.get(2));
+
+        // System.out.println("=======DAFTAR BUS=======");
+        // for (Bus bus : daftarBus) {
+        //     bus.displayBus();
+        //     System.out.println();
+        // }
+
+        // Queue<Angkot> antrianAngkot = new LinkedList<>();
+        // antrianAngkot.add(daftarAngkot.get(0));
+        // antrianAngkot.add(daftarAngkot.get(1));
+        // antrianAngkot.add(daftarAngkot.get(2));
+
+        // int nomorantrian = 0;
+        // System.out.println("Antrian Angkot di Terminal: ");
+        // for (Angkot angkot : antrianAngkot) {
+        //     System.out.println(++nomorantrian + ". " + "Pengemudi bernama " + angkot.getDriverAngkot().getNama() + " dengan angkot " + angkot.getTipe() + " masuk terminal.");
+        // }
+
+        // Queue<Bus> antrianBus = new LinkedList<>();
+        // antrianBus.add(daftarBus.get(0));
+        // antrianBus.add(daftarBus.get(1));
+        // antrianBus.add(daftarBus.get(2));
+
+        // int antrian = 0;
+        // System.out.println("Antrian Bus di Terminal: ");
+        // for (Bus bus : antrianBus) {
+        //     System.out.println(++antrian + ". " + "Pengemudi bernama " + bus.getDriverBus().getNama() + " dengan bus " + bus.getTipe() + " masuk terminal. ");
+        // }
 
         // Angkot angkot1 = new Angkot("N 1234 AB", "Suzuki", 10);
         // Angkot angkot2 = new Angkot("B 121 FQI", "Toyota", 10);
@@ -348,10 +426,5 @@ public class Relationship {
         // bus2.naikPenumpang(penumpang16);
         // bus2.naikPenumpang(penumpang19);
         // System.out.println();
-
-        // angkot1.displayAngkot();
-        // angkot2.displayAngkot();
-        // bus1.displayBus();
-        // bus2.displayBus();
     }
 }
