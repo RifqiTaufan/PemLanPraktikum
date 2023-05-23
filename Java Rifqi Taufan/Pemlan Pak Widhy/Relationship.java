@@ -208,22 +208,6 @@ class Penumpang extends Orang {
     public Penumpang(String nama) {
         super(nama);
     }
-
-    // public void naikAngkot(Angkot angkot) {
-    //     System.out.println("Penumpang bernama " + getNama() + " menaiki kendaraan angkot " + angkot.tipe + ".");
-    // }
-
-    // public void turunAngkot(Angkot angkot) {
-    //     System.out.println("Penumpang bernama " + getNama() + " turun dari kendaraan angkot " + angkot.tipe + ".");
-    // }
-
-    // public void naikBus(Bus bus) {
-    //     System.out.println("Penumpang bernama " + getNama() + " menaiki kendaraan bus " + bus.tipe + ".");
-    // }
-
-    // public void turunBus(Bus bus) {
-    //     System.out.println("Penumpang bernama " + getNama() + " turun dari kendaraan bus " + bus.tipe + ".");
-    // }
 }
 
 
